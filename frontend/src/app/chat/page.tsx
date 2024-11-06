@@ -106,7 +106,7 @@ export default function Page() {
 
   return (
     selectedUser && (
-      <main className="flex flex-col justify-between bg-[#0a0a0a] min-h-96  h-full w-full flex-1">
+      <main className="flex flex-col justify-between items-center w-full h-full bg-image bg-gradient-to-r from-green-500 via-green-800 to-gray-900">
         <div className="flex flex-col w-full p-1 text-black overflow-y-scroll">
         {filteredMessages.map((message, index) => {
             const showName = index === 0 || message.to?.id !== filteredMessages[index - 1].to?.id;
@@ -129,13 +129,21 @@ export default function Page() {
       })}
       <div ref={messagesEndRef} />
       </div>
+      <div className="mt-4 flex items-center justify-center display-flex w-[1200px] ml-5 space-x-2">
       <input
-        className="p-2 mt-1 text-black bg-gray-200 border border-gray-300 outline-none"
+        className="p-2 mt-1 text-black w-full rounded-lg bg-gray-200 border border-gray-300 mb-1 outline-none"
         type="text"
         value={messageContent}
         onChange={(e) => setMessageContent(e.target.value)}
         onKeyUp={(e) => e.key === "Enter" && sendMessage()}
       />
+      <button
+            onClick={sendMessage}
+            className="p-3 bg-teal-600 text-white w-[100px] rounded-lg shadow-md hover:bg-teal-700 active:bg-teal-800"
+          >
+            Enviar
+          </button>
+      </div>
     </main>
   )
 );

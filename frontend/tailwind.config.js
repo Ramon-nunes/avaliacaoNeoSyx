@@ -9,7 +9,16 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'fundo-image': "url('./src/public/imagens/fundo-chat.jpg')",
+      },
+      textShadow: {
+        outline: '1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black',
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+     require('tailwindcss-textshadow'),
+    ],
 }

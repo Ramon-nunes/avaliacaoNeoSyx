@@ -6,10 +6,11 @@ import { jwtDecode } from "jwt-decode";
 import { useCookies } from "react-cookie";
 import socket from '@/lib/socket';
 
-interface User {
-    name: string;
-    email: string;
-}
+// interface User {
+//     id: number;
+//     name: string;
+//     email: string;
+// }
 
 interface AuthContextType {
     user: User | null;
@@ -46,7 +47,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             console.error("Error decoding token:", error);
             setError(error as Error);
         }
-    }, [cookie.token]);
+    }, [ router,cookie.token]);
 
     const login = async (username: string, password: string) => {
         const headers = new Headers();
@@ -63,7 +64,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
             const data = await response.json();
 
             if (!response.ok || !data.token) {
-                setError(new Error(data.message || 'Login failed'));
+                setError(new Error(data.message || 'Falha ao tentar fazer login'));
                 return;
             }
 
