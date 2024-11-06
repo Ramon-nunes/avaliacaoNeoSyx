@@ -131,7 +131,7 @@ export default function Page() {
       </div>
       <div className="mt-4 flex items-center justify-center display-flex w-[1200px] ml-5 space-x-2">
       <input
-        className="p-2 mt-1 text-black w-full rounded-lg bg-gray-200 border border-gray-300 mb-1 outline-none"
+        className="p-2 mt-1 flex text-black w-full rounded-lg bg-gray-200 border border-gray-300 mb-1 outline-none"
         type="text"
         value={messageContent}
         onChange={(e) => setMessageContent(e.target.value)}

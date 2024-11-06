@@ -43,7 +43,7 @@ const Page = () => {
           >
             Login
           </button>
-          <p className="text-white text-bold text-gray-600">Não tem uma conta?</p>
+          <p className=" text-bold text-gray-600">Não tem uma conta?</p>
             <a className="text-blue-600 hover:underline" href="/register">
             Clique aqui
             </a>

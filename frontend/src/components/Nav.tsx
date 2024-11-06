@@ -1,6 +1,7 @@
 'use client'
  
 import { useEffect, useState } from "react";
+
  
 import UserCard from "../components/UserCard";
 import socket from '@/lib/socket'
@@ -46,7 +47,8 @@ const Nav = () => {
   }, []);
  
   return (
-    <nav className="h-screen w-64 p-4 bg-gray-800 shadow-lg flex flex-col items-center flex-wrap">
+    <nav className="flex flex-col w-[250px] items-center justify-start items-end  h-screen p-4 bg-gray-800 text-white">
+        <div className="flex flex-col w-[150px] pt-2 pb-4 ">
         <h2 className="text-lg font-bold text-white mb-4 text-justify">
         Usuários Online
         </h2>
@@ -55,12 +57,23 @@ const Nav = () => {
         /* @ts-expect-error: */
         (users.filter((user) => user.name != socket?.auth?.user?.name).map((user, index) => (
           <button key={index} onClick={() => setSelectedUser(user)} aria-label={`Select user ${user.name}`} >
-            <li >
+            <li className="flex-grow flex items-start justify-center w-full">
               <UserCard user={user}/>
             </li>
           </button>
         )))}
       </ul>
+      </div>
+      <div className="flex flex-row justify-center py-1 pt-28 pb-22 w-full">
+          <a href="/login">
+            <button
+              className="px-4 py-2 w-full justify-end shadow-inner font-bold text-white bg-sky-400 max-w-32 bg-gray-400 hover:bg-gray-600 rounded-lg active:bg-gray-800"
+                type="button"
+                  >
+        Deslogar
+            </button>
+          </a>
+        </div>
     </nav>
   );
 };
