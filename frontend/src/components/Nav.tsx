@@ -64,16 +64,10 @@ const Nav = () => {
         )))}
       </ul>
       </div>
-      <div className="flex flex-row justify-center py-1 pt-28 pb-22 w-full">
-          <a href="/login">
-            <button
-              className="px-4 py-2 w-full justify-end shadow-inner font-bold text-white bg-sky-400 max-w-32 bg-gray-400 hover:bg-gray-600 rounded-lg active:bg-gray-800"
-                type="button"
-                  >
+      <a  className="px-4 py-2 w-full mt-auto justify-end text-center shadow-inner font-bold text-white max-w-32 bg-gray-400 hover:bg-gray-600 rounded-lg active:bg-gray-800" href="/login">
+  
         Deslogar
-            </button>
           </a>
-        </div>
     </nav>
   );
 };
