@@ -54,7 +54,7 @@ const Page = () => {
             required
           />
           <button
-            className="px-4 py-2 w-full shadow-inner font-bold text-white bg-sky-400 max-w-32 bg-emerald-400 hover:bg-emerald-600 rounded-lg active:bg-emerald-800"
+            className="px-4 py-2 w-full shadow-inner font-bold text-white  max-w-32 bg-emerald-400 hover:bg-emerald-600 rounded-lg active:bg-emerald-800"
             type="submit"
           >
             Registrar
